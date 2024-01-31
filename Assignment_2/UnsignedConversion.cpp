@@ -78,7 +78,7 @@ bool isNumberOrNegNum(std::string DecNum) {
             continue;
         }
         else {
-            std::cout << "Not a Decimal Number input, or is a negitave Decimal Number.\n";
+            std::cout << "Not a Decimal Number input.\n";
             return false;
         }
     }
