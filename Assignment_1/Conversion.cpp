@@ -17,7 +17,7 @@ void displayGreeting() {
 }
 bool notHex(std::string userInput) {
     //checks if every ch is one of the possible hex digits
-    std::unordered_set<char> allHexDigits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F','a','b','c','d','e','f'};
+    std::unordered_set<char> allHexDigits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F','a','b','c','d','e','f' };
     for (char ch : userInput) {
         if (allHexDigits.count(ch) > 0) {
             continue;
@@ -33,7 +33,7 @@ bool notHex(std::string userInput) {
 bool isBinary(std::string biInput) {
     std::unordered_set<char> allBiDigits = { '0','1' };
 
-    
+
     //checks if every ch is one of the possible binary digits
     for (char ch : biInput) {
         if (allBiDigits.count(ch) > 0) {
@@ -63,7 +63,7 @@ std::string hexToBi(std::string hexNum) {
 
 }
 std::string BiToHex(std::string biNum) {
- 
+
     while ((biNum.length() % 4) != 0) {
         biNum.insert(0, 1, '0');
     }
@@ -154,8 +154,8 @@ int main() {
     while (runningMenu) {
         displayGreeting();
         userInput = getUserInput();
-        
-        if (userInput == "HB") 
+
+        if (userInput == "HB")
         {
             std::cout << "Enter a Hexidecimal number (Do not include the 0x part):";
 
@@ -168,11 +168,11 @@ int main() {
             }
         }
 
-        else if (userInput == "BH") 
+        else if (userInput == "BH")
         {
             std::cout << "Enter a Binary Number:";
             std::string biNum = getUserInput();
-            if (isBinary(biNum)) 
+            if (isBinary(biNum))
             {
                 std::string hexNum = BiToHex(biNum);
 
@@ -189,7 +189,7 @@ int main() {
                 continue;
             }
             else {
-                std::cout << "The binary is: " << hexToDec(hexNum) << std::endl;
+                std::cout << "The number is: " << hexToDec(hexNum) << std::endl;
             }
 
         }
